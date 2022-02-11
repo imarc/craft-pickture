@@ -1,0 +1,35 @@
+{
+    "name": "imarc/craft-rich-picker",
+    "description": "A richer, better picker for images, backgrounds, and more.",
+    "type": "craft-plugin",
+    "require": {
+        "craftcms/cms": "^3.7"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Imarc\\CraftRichPicker\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Imarc",
+            "homepage": "https://www.imarc.com"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/imarc/craft-rich-picker/issues",
+        "source": "https://github.com/imarc/craft-rich-picker/issues",
+        "docs": "https://github.com/imarc/craft-rich-picker/issues"
+    },
+    "config": {
+        "allow-plugins": {
+            "yiisoft/yii2-composer": true,
+            "craftcms/plugin-installer": true
+        }
+    },
+    "extra": {
+        "name": "Rich Picker",
+        "handle": "rich-picker"
+    }
+}
