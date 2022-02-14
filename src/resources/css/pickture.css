@@ -1,9 +1,9 @@
-.rich-picker-group {
+.pickture-group {
     display: flex;
     gap: 14px;
 }
 
-.rich-picker-option {
+.pickture-option {
     align-items: center;
     background-color: #fff;
     border-radius: 4px;
@@ -15,10 +15,10 @@
     padding-bottom: 12px;
 }
 
-.rich-picker-thumbnail {
+.pickture-thumbnail {
     max-width: min(100%, 128px);
 }
 
-.rich-picker-label {
+.pickture-label {
     padding: 0 0 12px;
 }

@@ -1,10 +1,10 @@
 <?php
 
-namespace Imarc\CraftRichPicker;
+namespace Imarc\Pickture;
 
 use craft\events\RegisterComponentTypesEvent;
 use craft\services\Fields;
-use Imarc\CraftRichPicker\fields\RichPicker;
+use Imarc\Pickture\fields\PicktureField;
 use yii\base\Event;
 
 class Plugin extends \craft\base\Plugin
@@ -15,7 +15,7 @@ class Plugin extends \craft\base\Plugin
 			Fields::class,
 			Fields::EVENT_REGISTER_FIELD_TYPES,
 			function(RegisterComponentTypesEvent $event) {
-				$event->types[] = RichPicker::class;
+				$event->types[] = PicktureField::class;
 			}
 		);
 		parent::init();

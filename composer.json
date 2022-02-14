@@ -1,6 +1,6 @@
 {
-    "name": "imarc/craft-rich-picker",
-    "description": "A richer, better picker for images, backgrounds, and more.",
+    "name": "imarc/craft-pickture",
+    "description": "A custom field type to let users pick between thumbnails instead of just text labels.",
     "type": "craft-plugin",
     "require": {
         "craftcms/cms": "^3.7"
@@ -8,7 +8,7 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Imarc\\CraftRichPicker\\": "src/"
+            "Imarc\\Pickture\\": "src/"
         }
     },
     "authors": [
@@ -18,9 +18,9 @@
         }
     ],
     "support": {
-        "issues": "https://github.com/imarc/craft-rich-picker/issues",
-        "source": "https://github.com/imarc/craft-rich-picker/issues",
-        "docs": "https://github.com/imarc/craft-rich-picker/issues"
+        "issues": "https://github.com/imarc/craft-pickture/issues",
+        "source": "https://github.com/imarc/craft-pickture/issues",
+        "docs": "https://github.com/imarc/craft-pickture/issues"
     },
     "config": {
         "allow-plugins": {
@@ -29,7 +29,7 @@
         }
     },
     "extra": {
-        "name": "Rich Picker",
-        "handle": "rich-picker"
+        "name": "Pickture",
+        "handle": "pickture"
     }
 }

@@ -1,5 +1,5 @@
 (function($){
-    RichPickerField = Garnish.Base.extend({
+    PicktureField = Garnish.Base.extend({
         initialized: false,
 
         init: function() {
@@ -11,10 +11,10 @@
 
 
         initialize: function() {
-            document.querySelectorAll('.rich-picker-group')
+            document.querySelectorAll('.pickture-group')
                 .forEach(group => {
 
-                    const groupOptions = group.querySelectorAll('.rich-picker-option')
+                    const groupOptions = group.querySelectorAll('.pickture-option')
                     const select = option => {
                         const input = option.querySelector('input[type=radio]')
                         input.checked = true

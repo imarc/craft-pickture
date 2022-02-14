@@ -3,7 +3,7 @@
 
 {%- set class = (class ?? [])|explodeClass|merge([
     'radio-group',
-    'rich-picker-group',
+    'pickture-group',
     (toggle ?? false) ? 'fieldtoggle' : null,
     (disabled ?? false) ? 'disabled' : null,
 ]|filter) %}
@@ -24,12 +24,12 @@
         {%- if option is not iterable %}
             {%- set option = {label: option, value: key} %}
         {%- endif %}
-        <div class="rich-picker-option" data-bleed="{{ option.color }}">
+        <div class="pickture-option" data-bleed="{{ option.color }}">
             {% tag 'img' with {
                 src: option.template,
                 alt: '',
                 title: option.label,
-                class: "rich-picker-thumbnail",
+                class: "pickture-thumbnail",
                 } %}{% endtag %}
             {% include "_includes/forms/radio" with {
                 describedBy: describedBy ?? null,
@@ -42,5 +42,5 @@
 {% endtag %}
 
 {% js %}
-new RichPickerField()
+new PicktureField()
 {% endjs %}

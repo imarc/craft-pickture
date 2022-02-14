@@ -1,24 +1,24 @@
 <?php
 
-namespace Imarc\CraftRichPicker\fields;
+namespace Imarc\Pickture\fields;
 
 use Craft;
 use craft\helpers\ArrayHelper;
 use craft\base\ElementInterface;
 use craft\helpers\Cp;
 use craft\fields\data\SingleOptionFieldData;
-use Imarc\CraftRichPicker\assets\RichPickerAsset;
+use Imarc\Pickture\assets\PicktureAsset;
 
-class RichPicker extends \craft\fields\RadioButtons
+class PicktureField extends \craft\fields\RadioButtons
 {
     public static function displayName(): string
     {
-        return Craft::t('rich-picker', 'Radio Buttons (Rich Picker)');
+        return Craft::t('pickture', 'Pickture (Radio Buttons)');
     }
 
     public function optionsSettingLabel(): string
     {
-        return Craft::t('rich-picker', 'Rich Picker Options');
+        return Craft::t('pickture', 'Pickture Options');
     }
 
     /**
@@ -46,12 +46,12 @@ class RichPicker extends \craft\fields\RadioButtons
             'autopopulate' => 'value',
         ];
         $cols['template'] = [
-            'heading' => Craft::t('rich-picker', 'Template'),
+            'heading' => Craft::t('pickture', 'Template'),
             'type' => 'singleline',
             'class' => 'code',
         ];
         $cols['color'] = [
-            'heading' => Craft::t('rich-picker', 'Color'),
+            'heading' => Craft::t('pickture', 'Color'),
             'type' => 'singleline',
             'class' => 'code',
         ];
@@ -113,14 +113,14 @@ class RichPicker extends \craft\fields\RadioButtons
 
     protected function inputHtml($value, ElementInterface $element = null): string
     {
-        Craft::$app->getView()->registerAssetBundle(RichPickerAsset::class);
+        Craft::$app->getView()->registerAssetBundle(PicktureAsset::class);
 
         /** @var SingleOptionFieldData $value */
         if (!$value->valid) {
             Craft::$app->getView()->setInitialDeltaValue($this->handle, null);
         }
 
-        return Craft::$app->getView()->renderTemplate('rich-picker/forms/radioGroup', [
+        return Craft::$app->getView()->renderTemplate('pickture/forms/picktureGroup', [
             'describedBy' => $this->describedBy,
             'name' => $this->handle,
             'value' => $value,
