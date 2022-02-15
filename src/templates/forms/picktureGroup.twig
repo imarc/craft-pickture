@@ -37,6 +37,7 @@
                 {{ option.template|raw }}
             {% endif %}
             {% include "_includes/forms/radio" with {
+                class: "pickture-radio-input",
                 describedBy: describedBy ?? null,
                 name: name ?? null,
                 checked: (option.value is defined and option.value == value),
