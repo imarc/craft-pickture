@@ -28,7 +28,7 @@ class PicktureField extends \craft\fields\RadioButtons
     {
         if (empty($this->options)) {
             // Give it a default row
-            $this->options = [['label' => '', 'template' => '', 'color' => '', 'value' => '']];
+            $this->options = [['label' => '', 'template' => '', 'background' => '', 'value' => '']];
         }
 
         $cols = [];
@@ -41,17 +41,18 @@ class PicktureField extends \craft\fields\RadioButtons
             ];
         }
         $cols['label'] = [
-            'heading' => Craft::t('app', 'Option Label'),
+            'heading' => Craft::t('app', 'Label'),
             'type' => 'singleline',
             'autopopulate' => 'value',
         ];
         $cols['template'] = [
-            'heading' => Craft::t('pickture', 'Template'),
+            'heading' => Craft::t('pickture', 'Image URL'),
             'type' => 'singleline',
             'class' => 'code',
+            'placeholder' => 'https://',
         ];
-        $cols['color'] = [
-            'heading' => Craft::t('pickture', 'Color'),
+        $cols['background'] = [
+            'heading' => Craft::t('pickture', 'CMS Block Background'),
             'type' => 'singleline',
             'class' => 'code',
         ];
@@ -102,7 +103,7 @@ class PicktureField extends \craft\fields\RadioButtons
                 $translatedOptions[] = [
                     'label' => Craft::t('site', $option['label']),
                     'template' => $option['template'],
-                    'color' => $option['color'],
+                    'background' => $option['background'],
                     'value' => $option['value'],
                 ];
             }

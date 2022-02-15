@@ -24,13 +24,18 @@
         {%- if option is not iterable %}
             {%- set option = {label: option, value: key} %}
         {%- endif %}
-        <div class="pickture-option" data-bleed="{{ option.color }}">
-            {% tag 'img' with {
-                src: option.template,
-                alt: '',
-                title: option.label,
-                class: "pickture-thumbnail",
-                } %}{% endtag %}
+        <div class="pickture-option" data-bleed="{{ option.background }}">
+            {% if option.template matches '(^https?://|^/)' %}
+                {% tag 'img' with {
+                    src: option.template,
+                    alt: '',
+                    title: option.label,
+                    class: "pickture-thumbnail",
+                    } %}
+                {% endtag %}
+            {% elseif option.template|length %}
+                {{ option.template|raw }}
+            {% endif %}
             {% include "_includes/forms/radio" with {
                 describedBy: describedBy ?? null,
                 name: name ?? null,
