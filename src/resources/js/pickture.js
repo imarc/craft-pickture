@@ -51,11 +51,16 @@
                                 })
 
 
-                            // bleed if already selected
-                            if (input.checked && option.dataset.bleed) {
-                                option.closest('.ni_block, .matrixblock')
-                                    .style.background = option.dataset.bleed
+                            if (input.checked) {
+                                option.classList.add('active')
+
+                                // bleed if already selected
+                                if (option.dataset.bleed) {
+                                    option.closest('.ni_block, .matrixblock')
+                                        .style.background = option.dataset.bleed
+                                }
                             }
+
                         })
                 })
         },
