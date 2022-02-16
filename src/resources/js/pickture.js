@@ -29,12 +29,11 @@
                             })
 
                         // bleed if set
-                        if (option.dataset.bleed) {
-                            option.closest('.ni_block, .matrixblock')
-                                .style.background = option.dataset.bleed
+                        const parent = option.closest('.ni_block, .matrixblock, .content-pane')
+                        if (option.dataset.bleed && parent) {
+                            parent.style.background = option.dataset.bleed
                         } else {
-                            option.closest('.ni_block, .matrixblock')
-                                .style.background = ''
+                            parent.style.background = ''
                         }
 
                     }
@@ -55,9 +54,9 @@
                                 option.classList.add('active')
 
                                 // bleed if already selected
-                                if (option.dataset.bleed) {
-                                    option.closest('.ni_block, .matrixblock')
-                                        .style.background = option.dataset.bleed
+                                const parent = option.closest('.ni_block, .matrixblock, .content-pane')
+                                if (option.dataset.bleed && parent) {
+                                    parent.style.background = option.dataset.bleed
                                 }
                             }
 
