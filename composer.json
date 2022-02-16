@@ -19,8 +19,8 @@
     ],
     "support": {
         "issues": "https://github.com/imarc/craft-pickture/issues",
-        "source": "https://github.com/imarc/craft-pickture/issues",
-        "docs": "https://github.com/imarc/craft-pickture/issues"
+        "source": "https://github.com/imarc/craft-pickture",
+        "docs": "https://github.com/imarc/craft-pickture/blob/main/README.md"
     },
     "config": {
         "allow-plugins": {
