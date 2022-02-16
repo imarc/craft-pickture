@@ -1,5 +1,5 @@
 Pickture Plugin for Craft
-#########################
+=========================
 
 This plugin adds a field type to Craft, **Pickture (Radio Buttons)**, that is a
 more visual alternative to radio buttons, where each radio button has an
