@@ -90,7 +90,7 @@ class PicktureField extends \craft\fields\RadioButtons
         ]);
     }
 
-    protected function translatedOptions(): array
+    protected function translatedOptions(bool $encode = false): array
     {
         $translatedOptions = [];
 
