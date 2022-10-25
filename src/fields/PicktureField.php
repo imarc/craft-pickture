@@ -115,7 +115,7 @@ class PicktureField extends \craft\fields\RadioButtons
         return $translatedOptions;
     }
 
-    protected function inputHtml(mixed $value, ElementInterface $element = null): string
+    protected function inputHtml($value, ElementInterface $element = null): string
     {
         Craft::$app->getView()->registerAssetBundle(PicktureAsset::class);
 
