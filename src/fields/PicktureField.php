@@ -32,14 +32,6 @@ class PicktureField extends \craft\fields\RadioButtons
         }
 
         $cols = [];
-        if ($this->optgroups) {
-            $cols['isOptgroup'] = [
-                'heading' => Craft::t('app', 'Optgroup?'),
-                'type' => 'checkbox',
-                'class' => 'thin',
-                'toggle' => ['!value', '!default'],
-            ];
-        }
         $cols['label'] = [
             'heading' => Craft::t('app', 'Label'),
             'type' => 'singleline',
@@ -65,18 +57,8 @@ class PicktureField extends \craft\fields\RadioButtons
         $cols['default'] = [
             'heading' => Craft::t('app', 'Default?'),
             'type' => 'checkbox',
-            'radioMode' => !$this->multi,
             'class' => 'thin',
         ];
-
-        $rows = [];
-        foreach ($this->options as $option) {
-            if (isset($option['optgroup'])) {
-                $option['isOptgroup'] = true;
-                $option['label'] = ArrayHelper::remove($option, 'optgroup');
-            }
-            $rows[] = $option;
-        }
 
         return Cp::editableTableFieldHtml([
             'label' => $this->optionsSettingLabel(),
@@ -88,7 +70,7 @@ class PicktureField extends \craft\fields\RadioButtons
             'allowReorder' => true,
             'allowDelete' => true,
             'cols' => $cols,
-            'rows' => $rows,
+            'rows' => $this->options,
             'errors' => $this->getErrors('options'),
         ]);
     }
